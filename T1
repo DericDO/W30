@@ -1,0 +1,55 @@
+package lab5;
+import java.util.Scanner;
+
+
+public class Task1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter two characters: ");
+        String characters = input.nextLine();
+        
+        char majorCode = characters.charAt(0);
+        char statusChar = characters.charAt(1);
+        
+        String major = "";
+        switch (majorCode) {
+            case 'M':
+                major = "Mathematics";
+                break;
+            case 'C':
+                major = "Computer Science";
+                break;
+            case 'I':
+                major = "Information Technology";
+                break;
+            default:
+                System.out.println("Invalid major code.");
+                System.exit(1); 
+        }
+        
+        String status = "";
+        switch (statusChar) {
+            case '1':
+                status = "Freshman";
+                break;
+            case '2':
+                status = "Sophomore";
+                break;
+            case '3':
+                status = "Junior";
+                break;
+            case '4':
+                status = "Senior";
+                break;
+            default:
+                System.out.println("Invalid status character.");
+                System.exit(1); 
+        }
+        
+        System.out.println(major + " " + status);
+        
+        input.close(); 
+    }
+}
+
