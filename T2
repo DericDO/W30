@@ -1,0 +1,32 @@
+package lab5;
+import java.util.Scanner;
+
+
+public class Task2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Please type a string: ");
+        String input = scanner.nextLine();
+        
+        String result = removeRepeatedChars(input);
+        
+        System.out.println("After removing repeating chars and spaces: " + result);
+        
+        scanner.close();
+    }
+    
+    public static String removeRepeatedChars(String input) {
+        StringBuilder resultBuilder = new StringBuilder();
+        
+        for (int i = 0; i < input.length(); i++) {
+            char currentChar = input.charAt(i);
+            if (resultBuilder.indexOf(String.valueOf(currentChar)) == -1) {
+                resultBuilder.append(currentChar);
+            }
+        }
+        
+        return resultBuilder.toString();
+    }
+}
+
